@@ -158,4 +158,43 @@ body {
   object-fit: cover;
 }
 
+.article {
+  height: 90vh;
+  background-color: #000;
+  border: 1px solid red;
+  display: flex;
+}
+.article-me {
+  height: 90vh;
+  width: 70%;
+  border: 1px solid greenyellow;
+  display: flex;
+  align-items: center;
+}
+.article-me-pic {
+  border: 1px solid cyan;
+  width: 40%;
+  height: 70vh;
+}
+.article-me-info {
+  width: 60%;
+  height: 90vh;
+  border: 1px solid magenta;
+}
+.article-me-info-stats {
+  height: 55vh;
+  border: 1px solid lightseagreen;
+}
+.article-me-info-video {
+  height: 30vh;
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+.article-players {
+  height: 90vh;
+  width: 30%;
+  border: 1px solid blue;
+}
+
 /*# sourceMappingURL=style.css.map */

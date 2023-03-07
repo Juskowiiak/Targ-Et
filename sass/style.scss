@@ -155,3 +155,41 @@ body {
     }
   }
 }
+.article {
+  height: 90vh;
+  background-color: #000;
+  border: 1px solid red;
+  display: flex;
+  &-me {
+    height: 90vh;
+    width: 70%;
+    border: 1px solid greenyellow;
+    display: flex;
+    align-items: center;
+    &-pic {
+      border: 1px solid cyan;
+      width: 40%;
+      height: 70vh;
+    }
+    &-info {
+      width: 60%;
+      height: 90vh;
+      border: 1px solid magenta;
+      &-stats {
+        height: 55vh;
+        border: 1px solid lightseagreen;
+      }
+      &-video {
+        height: 30vh;
+        width: 60%;
+        margin: 0 auto;
+        border: 1px solid red;
+      }
+    }
+  }
+  &-players {
+    height: 90vh;
+    width: 30%;
+    border: 1px solid blue;
+  }
+}
