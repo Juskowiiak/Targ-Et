@@ -196,7 +196,8 @@ body {
 .article-me-info-stats-info {
   text-align: center;
   width: 85%;
-  margin: 2rem auto;
+  margin: 3rem auto 0;
+  border: 1px solid burlywood;
 }
 .article-me-info-stats-info span {
   color: #e94c4c;
@@ -225,15 +226,19 @@ body {
   height: 80vh;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 0.2rem;
 }
 .article-players ul li {
-  width: 49%;
+  width: 50%;
   border: 1px solid orange;
-  height: 19%;
+  height: 20%;
+  overflow: hidden;
+}
+.article-players ul li:hover img {
+  transform: scale(1.2);
 }
 .article-players ul li img {
   object-fit: cover;
+  transition: all 1s ease-in;
 }
 
 /*# sourceMappingURL=style.css.map */
