@@ -43,7 +43,7 @@ mod3.addEventListener("click", function () {
   document.querySelector("#player-video").src = "./video/modelC.mp4";
   document.querySelector("#player-pic").src = "./imagem/modelC.png";
   document.querySelector(".article-me-info-stats-nome").innerHTML =
-    "Kazuya Kasama";
+    "Kazuya Mishima";
   document.querySelector(".article-me-info-stats-info-text1").innerHTML =
     "<span>K</span>azuya was born the son of Heihachi Mishima and Kazumi Mishima and raised on the Mishima Estate, the Mishima Clan's enormous aristocratic home in Japan. Kazuya's mother loved and doted on him, as did Kazuya's grandfather, Jinpachi Mishima, who also taught him Mishima Style Fighting Karate from a young age.<br><br>";
   document.querySelector(".article-me-info-stats-info-text2").innerHTML =
