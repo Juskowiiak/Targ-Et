@@ -74,6 +74,7 @@ body {
     }
   }
 }
+//###################################################
 .section {
   height: 90vh;
   background-color: #fff;
@@ -156,6 +157,7 @@ body {
     }
   }
 }
+//###################################################
 .article {
   height: 90vh;
   background-color: #000;
@@ -238,6 +240,7 @@ body {
     }
   }
 }
+//###################################################
 .article-2 {
   background-image: url("imagem/book.png");
   height: 80vh;
@@ -386,6 +389,80 @@ body {
               margin-left: 1rem;
             }
           }
+        }
+      }
+    }
+  }
+}
+//###################################################
+.article-3 {
+  border: 1px solid burlywood;
+  height: 90vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &-title {
+    height: 10%;
+    border: 1px solid magenta;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 2.2rem;
+    }
+  }
+  &-box {
+    border: 1px solid red;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 100rem;
+    position: relative;
+    &-cards {
+      border: 11px solid orange;
+      position: relative;
+      width: 30rem;
+      height: 22rem;
+      transform-style: preserve-3d;
+      transform: translateZ(-35rem);
+      transition: transform 0.3s ease-in;
+      &-card {
+        border: 1px solid rgb(68, 151, 219);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.2rem;
+        font-size: 3rem;
+        font-weight: 700;
+        &:nth-child(1) {
+          transform: rotateY(0deg) translateZ(25rem);
+        }
+        &:nth-child(2) {
+          transform: rotateY(60deg) translateZ(25rem);
+        }
+        &:nth-child(3) {
+          transform: rotateY(120deg) translateZ(25rem);
+        }
+        &:nth-child(4) {
+          transform: rotateY(180deg) translateZ(25rem);
+        }
+        &:nth-child(5) {
+          transform: rotateY(240deg) translateZ(25rem);
+        }
+        &:nth-child(6) {
+          transform: rotateY(300deg) translateZ(25rem);
+        }
+
+        &-pict {
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+          object-fit: fill;
         }
       }
     }
