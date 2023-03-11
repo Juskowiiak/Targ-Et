@@ -11,11 +11,15 @@ img {
   object-fit: contain;
   width: 100%;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: #fff;
 }
 .main {
   height: 100vh;
+  position: relative;
   &-header {
     position: fixed;
     top: 0;
@@ -28,6 +32,9 @@ body {
       width: 15%;
       height: 100%;
       margin: 0 auto;
+      @include mixim.tela_1200 {
+        width: 25%;
+      }
     }
     i {
       display: none;
@@ -42,6 +49,14 @@ body {
     display: flex;
     justify-content: center;
     background-color: transparent;
+    @include mixim.tela_800 {
+      flex-direction: column;
+      width: 10%;
+      height: 90vh;
+      text-align: right;
+      justify-content: end;
+      padding-bottom: 45%;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -50,19 +65,42 @@ body {
       opacity: 0.5;
       background-color: #000;
       z-index: -1;
+      @include mixim.tela_800 {
+        background-color: transparent;
+      }
     }
-    li:not(:last-child) {
+    a {
+      @include mixim.tela_800 {
+        width: 100%;
+      }
+    }
+    a:not(:last-child) {
       margin-right: 2.5rem;
+      @include mixim.tela_800 {
+        margin: 0;
+      }
     }
     li {
+      position: relative;
       transition: all 0.7s ease;
       cursor: pointer;
       font-size: 1.2rem;
       color: rgb(255, 255, 255);
       text-shadow: 1px 1px 1px #000;
+      @include mixim.tela_800 {
+        font-size: 0.8rem;
+        width: 100%;
+        padding-block: 0.2rem;
+        color: #696969;
+      }
       &:hover {
         margin-bottom: 0.6rem;
         color: #fff;
+        @include mixim.tela_800 {
+          color: #fff;
+          margin-left: 1rem;
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -83,16 +121,16 @@ body {
   display: flex;
   width: 90%;
   margin: 0 auto;
-  border: 1px solid red;
   position: relative;
   align-items: center;
   z-index: -2;
+  padding-bottom: 10%;
   @include mixim.tela_1050 {
     flex-direction: column;
+    padding-bottom: 0;
   }
   &-text {
     width: 40%;
-    border: 1px solid greenyellow;
     height: 40vh;
     display: flex;
     flex-direction: column;
@@ -102,6 +140,11 @@ body {
       width: 100%;
       height: 30vh;
     }
+    @include mixim.tela_1050 {
+      width: 100%;
+      height: 15vh;
+    }
+
     h3 {
       color: rgb(150, 16, 43);
       text-shadow: 1px 0 0 #000;
@@ -115,6 +158,9 @@ body {
       font-size: 1.1rem;
       background-color: #fff;
       padding: 0.5rem;
+      @include mixim.tela_650 {
+        width: 100%;
+      }
       &::before {
         position: absolute;
         content: "";
@@ -155,12 +201,10 @@ body {
     position: relative;
     width: 60%;
     height: 90vh;
-    border: 1px solid #000;
     @include mixim.tela_1050 {
       width: 100%;
     }
     &-pic1 {
-      border: 1px solid cyan;
       position: absolute;
       height: 55%;
       width: 55%;
@@ -173,10 +217,15 @@ body {
         left: 5%;
         object-fit: contain;
       }
+      @include mixim.tela_650 {
+        height: 75%;
+        width: 75%;
+        top: 0%;
+        left: 0%;
+      }
     }
     &-pic2 {
       position: absolute;
-      border: 1px solid crimson;
       height: 50%;
       width: 50%;
       right: 10%;
@@ -186,7 +235,12 @@ body {
         height: 60%;
         bottom: 5%;
         right: 5%;
-        object-fit: contain;
+      }
+      @include mixim.tela_650 {
+        height: 75%;
+        width: 75%;
+        bottom: 0%;
+        right: 0%;
       }
     }
   }
@@ -195,7 +249,6 @@ body {
 .article {
   height: 90vh;
   background-color: #000;
-  border: 1px solid red;
   display: flex;
   @include mixim.tela_1050 {
     flex-direction: column;
@@ -203,66 +256,79 @@ body {
   &-me {
     height: 90vh;
     width: 70%;
-    border: 1px solid greenyellow;
     display: flex;
     align-items: center;
     @include mixim.tela_1050 {
       width: 100%;
-      height: 65vh;
+      height: 60%;
     }
     &-pic {
-      border: 1px solid cyan;
       width: 40%;
       height: 70vh;
       @include mixim.tela_1050 {
         width: 30%;
         height: 100%;
       }
+      @include mixim.tela_800 {
+        width: 40%;
+      }
     }
     &-info {
       width: 60%;
       height: 90vh;
-      border: 1px solid magenta;
       position: relative;
       @include mixim.tela_1050 {
         width: 70%;
         height: 100%;
+        display: flex;
       }
+
       &-stats {
         position: relative;
         height: 60vh;
-        border: 3px solid rgb(54, 170, 223);
         text-align: center;
         @include mixim.tela_1050 {
+          height: 65%;
+        }
+        @include mixim.tela_800 {
           height: 60%;
         }
         &-nome {
-          border: 1px solid red;
-          padding: 0.5rem 1.5rem;
           display: inline-block;
           margin-block: 1rem 0;
           position: relative;
-          height: 10%;
+          color: rgb(235, 43, 43);
+          text-shadow: 1px 0 0 #9c3b3b;
+          font-size: 1.8rem;
+          top: 0;
           @include mixim.tela_1050 {
+            font-size: 2.3rem;
+            margin-block: 2rem;
+          }
+          @include mixim.tela_800 {
+            font-size: 1.7rem;
           }
         }
         &-info {
           text-align: center;
           width: 90%;
           margin: 2% auto 0;
-          border: 1px solid burlywood;
           height: 60%;
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
           @include mixim.tela_1200 {
-            height: 70%;
             font-size: 0.9rem;
           }
           @include mixim.tela_1050 {
             width: 100%;
-            height: 60%;
-            margin-top: 1rem;
+            margin-top: 3rem;
+          }
+          @include mixim.tela_800 {
+            font-size: 1rem;
+          }
+          @include mixim.tela_650 {
+            font-size: 0.8rem;
           }
           span {
             color: #e94c4c;
@@ -273,16 +339,23 @@ body {
       }
       &-video {
         position: absolute;
-        bottom: 2%;
+        bottom: 0%;
         left: 50%;
         transform: translate(-50%);
         height: 30vh;
         width: 70%;
-        border: 1px solid red;
         @include mixim.tela_1050 {
           width: 75%;
           height: 40%;
-          border: 1px solid blue;
+          display: none;
+        }
+        @include mixim.tela_800 {
+          width: 70%;
+          height: 35%;
+        }
+        @include mixim.tela_650 {
+          width: 75%;
+          height: 32%;
         }
       }
     }
@@ -290,36 +363,38 @@ body {
   &-players {
     height: 90vh;
     width: 30%;
-    border: 3px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
     @include mixim.tela_1050 {
-      width: 90%;
+      width: 95%;
       height: 35%;
       margin: 0 auto;
     }
+
     ul {
       display: flex;
       width: 70%;
-      border: 1px solid pink;
       height: 80vh;
       flex-wrap: wrap;
       justify-content: space-between;
       @include mixim.tela_1050 {
-        flex-wrap: nowrap;
         width: 100%;
-        height: 70%;
+        height: 100%;
+      }
+      @include mixim.tela_650 {
+        flex-wrap: wrap;
+        height: 90%;
       }
       li {
         width: 50%;
-        border: 1px solid orange;
         height: 20%;
         overflow: hidden;
         @include mixim.tela_1050 {
           width: 20%;
-          height: 100%;
+          height: 50%;
         }
+
         &:hover img {
           transform: scale(1.2);
         }
@@ -341,25 +416,23 @@ body {
   align-items: center;
   width: 65%;
   margin: 10vh auto 0;
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
   @include mixim.tela_1200 {
-    width: 80%;
-    border: 1px solid green;
+    width: 90%;
   }
-  @include mixim.tela_1050 {
-    border: 1px solid blue;
+  @include mixim.tela_800 {
+    width: 100%;
   }
+
   i {
     width: 100%;
-    margin: 0 aut;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     position: absolute;
-    border: 1px solid red;
-    top: -10%;
+    top: -5%;
     left: 0;
     color: rgb(233, 74, 74);
     p {
@@ -373,26 +446,39 @@ body {
     }
   }
   &-livro {
-    border: 1px solid cyan;
     width: 85%;
     height: 90%;
     margin-bottom: 2%;
     display: flex;
-    padding: 1rem;
     &-pag1 {
-      border: 1px solid crimson;
       width: 50%;
       height: 100%;
       text-align: center;
-      padding-right: 6%;
+      padding-right: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      @include mixim.tela_650 {
+        padding-right: 1%;
+      }
       &-info {
         height: 65%;
         margin-bottom: 5%;
-        border: 2px solid #cccccc;
         background-color: #000;
         position: relative;
-        box-shadow: 2px 2px 2px #cccccc;
+        box-shadow: 2px 2px 2px #000000;
         z-index: 3;
+        @include mixim.tela_800 {
+          height: 70%;
+          width: 95%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        @include mixim.tela_650 {
+          width: 90%;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -402,53 +488,74 @@ body {
           z-index: -1;
           top: 0%;
           left: 0%;
-          box-shadow: 2px 2px 2px #cccccc;
+          box-shadow: 2px 2px 2px #000000;
           transform: rotate(180deg);
         }
         &-nome {
           height: 15%;
-          border: 1px solid crimson;
           text-decoration: underline;
-          color: #ffffff;
+          color: rgb(163, 146, 47);
           font-size: 2rem;
+          text-shadow: 0px 1px 1px rgb(163, 146, 47);
+          @include mixim.tela_800 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25%;
+            font-size: 2.3rem;
+          }
         }
         &-video {
           height: 75%;
-          border: 1px solid crimson;
           width: 100%;
           margin: 0 auto;
+          @include mixim.tela_800 {
+            height: 50%;
+          }
         }
         &-skill {
           height: 10%;
-          border: 1px solid crimson;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #ffffff;
+          @include mixim.tela_800 {
+            height: 20%;
+            font-size: 0.9rem;
+          }
         }
       }
       &-lorem {
         height: 30%;
-        border: 1px solid crimson;
         padding-top: 1rem;
         display: flex;
         color: #000;
         font-weight: bold;
+        @include mixim.tela_800 {
+          height: 25%;
+          width: 90%;
+          margin-inline: auto;
+          font-size: 0.8rem;
+        }
       }
     }
     &-pag2 {
-      border: 1px solid magenta;
       width: 50%;
       height: 100%;
-      padding-left: 6%;
+      padding-left: 3%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       &-control {
-        border: 1px solid crimson;
         height: 30%;
-
-        margin-bottom: 5%;
+        @include mixim.tela_800 {
+          height: 25%;
+          width: 85%;
+        }
+        @include mixim.tela_650 {
+          height: 20%;
+        }
       }
       &-combo {
         height: 65%;
@@ -456,9 +563,16 @@ body {
         flex-direction: column;
         position: relative;
         background-color: #000;
-        box-shadow: 2px 2px 2px #cccccc;
+        box-shadow: 2px 2px 2px #000000;
         z-index: 3;
-        border: 2px solid #cccccc;
+        @include mixim.tela_800 {
+          height: 70%;
+        }
+        @include mixim.tela_650 {
+          height: 75%;
+          margin-bottom: 3%;
+          width: 90%;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -468,7 +582,7 @@ body {
           z-index: -1;
           top: 0%;
           left: 0%;
-          box-shadow: 2px 2px 2px #cccccc;
+          box-shadow: 2px 2px 2px #000000;
           transform: rotate(180deg);
         }
         li {
@@ -492,7 +606,6 @@ body {
 }
 //###################################################
 .article-3 {
-  border: 1px solid burlywood;
   height: 90vh;
   background-color: #000;
   display: flex;
@@ -501,17 +614,18 @@ body {
   justify-content: center;
   &-title {
     height: 10%;
-    border: 1px solid magenta;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     h2 {
       font-size: 2.2rem;
+      color: rgb(150, 16, 43);
+      text-shadow: 1px 0 0 #000;
+      font-family: cursive;
     }
   }
   &-box {
-    border: 1px solid red;
     height: 80%;
     width: 100%;
     display: flex;
@@ -519,22 +633,39 @@ body {
     justify-content: center;
     perspective: 100rem;
     position: relative;
+    @include mixim.tela_800 {
+      perspective: 30rem;
+    }
+    @include mixim.tela_650 {
+      perspective: 10rem;
+    }
     &-cards {
-      border: 11px solid orange;
       position: relative;
       width: 30rem;
       height: 22rem;
       transform-style: preserve-3d;
       transform: translateZ(-35rem);
       transition: transform 0.3s ease-in;
+      @include mixim.tela_800 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       &-card {
-        border: 1px solid rgb(68, 151, 219);
         position: absolute;
         width: 100%;
         height: 100%;
         border-radius: 0.2rem;
         font-size: 3rem;
         font-weight: 700;
+        @include mixim.tela_800 {
+          width: 95%;
+          height: 95%;
+        }
+        @include mixim.tela_650 {
+          width: 70%;
+          height: 70%;
+        }
         &:nth-child(1) {
           transform: rotateY(0deg) translateZ(25rem);
         }
@@ -563,4 +694,10 @@ body {
       }
     }
   }
+}
+
+.main,
+.article,
+.article-2 {
+  margin-bottom: 10vh;
 }

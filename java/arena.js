@@ -4,4 +4,4 @@ function rodar() {
   angulo -= 60;
   cartas.style.transform = `translateZ(-25rem) rotateY(${angulo}deg)`;
 }
-setInterval(rodar, 6000);
+setInterval(rodar, 3000);
